@@ -1,12 +1,11 @@
-
 import Imagen from "./Imagen";
 import { useState } from 'react';
-import "../../styles/cardItem.css"
-import "../../styles/detailsItem.css"
+import { Link } from "react-router-dom";
+import "../../styles/cardItem.css";
+import "../../styles/detailsItem.css";
 import Description from "./Description";
 import ButtonDetalles from "./Buttondetalles";
 import ButtonAddCart from "./ButtonAddCart";
-import { Link } from "react-router-dom";
 
 const CardItem = (props) => {
     const [hoveredID, setHoveredID] = useState(null);
@@ -42,5 +41,3 @@ const CardItem = (props) => {
 }
 
 export default CardItem;
-
-

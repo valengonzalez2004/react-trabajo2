@@ -9,10 +9,11 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<ContainerCardItems />} />
-        <Route path="/category/:id" element={<ContainerCardItems />} />
-        <Route path="/items/:id" element= {<ItemDetailContainer />} />
-      </Routes>
+  <Route path="/" element={<ContainerCardItems />} />
+  <Route path="/category/:id" element={<ContainerCardItems />} />
+  <Route path="/items/:id" element={<ItemDetailContainer />} />
+</Routes>
+
     </BrowserRouter>
   );
 }

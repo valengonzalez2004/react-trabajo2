@@ -2,7 +2,8 @@ import CardItem from "./CardItem";
 import fetchSimulation from "../../utils/fetchSimulation";
 import products from "../../utils/products";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; // Importa useParams
+import { useParams } from "react-router-dom"; 
+import { Link } from "react-router-dom";// Importa useParams
 
 const ContainerCardItems = () => {
     const [datos, setDatos] = useState([]);
@@ -16,22 +17,29 @@ const ContainerCardItems = () => {
 
     // Filtra los productos según el tipo seleccionado en la URL
     const filteredProducts = id
-      ? datos.filter((product) => product.type === id)
-      : datos;
+        ? datos.filter((product) => product.type === id)
+        : datos;
+
+
+  
+
+    // ...
 
     return (
         <div className="containerCardItems">
-            {filteredProducts.map((product) => ( 
-                <CardItem
-                    key={product.id}
-                    image={product.imageProduct.firstImage}
-                    title={product.title}
-                    cantidad={product.stock}
-                    precio={product.price}
-                />
+            {filteredProducts.map((product) => (
+                <Link key={product.id} to={`/items/${product.id}`}>
+                    <CardItem
+                        imagen={product.imageProduct.firstImage}
+                        title={product.title}
+                        cantidad={product.stock}
+                        precio={product.price}
+                    />
+                </Link>
             ))}
         </div>
-    )
-}
+    );
 
-export default ContainerCardItems;
+            }
+
+    export default ContainerCardItems;
